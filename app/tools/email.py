@@ -3,7 +3,7 @@ from email.mime.text import MIMEText
 
 from app.tools.gmail_service import get_gmail_service
 from app.tools.contacts import get_email
-
+from app.memory.memory import save_memory
 
 def send_email(parameters):
 
@@ -33,4 +33,10 @@ def send_email(parameters):
         body={"raw": raw}
     ).execute()
 
-    print(f"\n✅ Email sent successfully to {recipient}")
+    print(f"\n✅ Email sent successfully to {recipient}")  
+
+    save_memory(
+    command=f"Send email to {name}",
+    tool="email",
+    result=f"Email sent successfully to {recipient}"
+    )

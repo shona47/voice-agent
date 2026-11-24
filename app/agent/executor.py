@@ -9,6 +9,10 @@ def execute(plan):
     tool = TOOLS.get(intent)
 
     if tool:
-        tool(parameters)
+        return tool(parameters)
     else:
         print(f"Unknown tool: {intent}")
+        return {
+            "success": False,
+            "message": f"Unknown tool: {intent}"
+        }

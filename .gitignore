@@ -12,3 +12,23 @@ input.wav
 
 .vscode/
 .idea/
+
+# Local databases and AI memory
+app/memory/database.db
+app/memory/chroma.sqlite3
+app/memory/*.bin
+app/memory/__pycache__/
+
+# Downloaded voice models and test audio
+app/speech/models/
+
+# ChromaDB local storage
+app/memory/chroma_db/
+
+# Local SQLite database
+app/memory/database.db
+
+# Python cache
+__pycache__/
+*.pyc
+test_voice.txt
